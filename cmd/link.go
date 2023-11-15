@@ -92,7 +92,7 @@ func validateGitRepository() model.RepoDefinition {
 
 			if found {
 				remoteUrl = url
-				fmt.Printf("\u001b[33mFound remote: %s\n\033[0m", url)
+				fmt.Printf("Found remote: %s\n", url)
 				break
 			}
 		}
