@@ -1,9 +1,18 @@
 package config
 
-import "github.com/spf13/viper"
+import (
+	"strings"
+
+	"github.com/spf13/viper"
+)
 
 func GetOrganizationUrl() string {
 	return GetStringValue("org_url")
+}
+
+func GetOrganizationName() string {
+	parts := strings.Split(GetStringValue("org_url"), "/")
+	return parts[len(parts)-1]
 }
 
 func SetOrganizationUrl(url string) {
